@@ -69,5 +69,24 @@ public class tryheapsort
         }
     }
   // commit
+  public static int insert(String[] heap, String value, int size) {
+
+        heap[size] = value;
+        heapifyUp(heap, size); 
+
+        return size + 1;
+    }
+ public static void heapSort(String[] heap) {
+
+        int size = heap.length;
+
+        for (int i = size - 1; i > 0; i--) {
+
+            swap(heap, 0, i);
+            heapifyDown(heap, i, 0);
+        }
+    }
+// commmit changes  
+  
   
     
