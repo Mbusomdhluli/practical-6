@@ -14,7 +14,7 @@
 
 // Name: Mbuso
 //Student Number:4577545
-//Date: 18 March 2026
+//Date: 16 March 2026
 import java .io.*;
 import java .util.*;
 public class tryheapsort
@@ -46,4 +46,28 @@ public class tryheapsort
         }
     }
   //commit
-          
+   public static void buildBottomUp(String[] heap) {
+
+        int n = heap.length;
+
+        for (int i = n / 2 - 1; i >= 0; i--) {
+            heapifyDown(heap, n, i);
+        }
+    }
+     public static void heapifyUp(String[] heap, int index) {
+
+        while (index > 0) {
+
+            int parent = (index - 1) / 2;
+
+            if (heap[index].compareTo(heap[parent]) > 0) {
+                swap(heap, index, parent);
+                index = parent;
+            } else {
+                break;
+            }
+        }
+    }
+  // commit
+  
+    
