@@ -31,3 +31,19 @@ public class tryheapsort
             int right = 2 * i + 2;
             int smallest = i;
 //commit 
+           if (left < size && heap[left].compareTo(heap[smallest]) > 0)
+                smallest = left;
+
+            if (right < size && heap[right].compareTo(heap[smallest]) > 0)
+                smallest = right;
+
+            if (smallest != i) {
+                swap(heap, i, smallest);
+                i = smallest;
+            } else {
+                break;
+            }
+        }
+    }
+  //commit
+          
