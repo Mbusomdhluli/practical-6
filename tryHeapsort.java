@@ -135,5 +135,30 @@ public class tryheapsort
         long end1 = System.nanoTime();
      // commit changes 
      
+      long start2 = System.nanoTime();
+
+        int size = 0;
+
+        for (String w : words)
+            size = insert(heap2, w, size);
+
+        heapSort(heap2);
+
+        long end2 = System.nanoTime();
+
+         double time1 = (end1 - start1) / 1e6;
+        double time2 = (end2 - start2) / 1e6;
+
+        System.out.println("Bottom-Up Heap Build + Sort Time: " + time1 + " ms");
+        System.out.println("Top-Down Heap Build + Sort Time: " + time2 + " ms");
+
+        System.out.println("\nFirst 20 sorted words:");
+
+        for (int i = 0; i < 20 && i < heap1.length; i++)
+            System.out.println(heap1[i]);
+    }
+}
+// commit changes 
+
 
     
