@@ -106,5 +106,34 @@ public class tryheapsort
             }
         }
     // commit changes 
-  
+
+  br.close();
+
+        return list.toArray(new String[0]);
+    }
+
+    
+    public static void printArray(String[] arr) {
+
+        for (int i = 0; i < arr.length; i++)
+            System.out.print(arr[i] + " ");
+
+        System.out.println();
+    }
+   public static void main(String[] args) throws Exception {
+
+        String[] words = readWords("words.txt");
+
+        String[] heap1 = Arrays.copyOf(words, words.length);
+        String[] heap2 = new String[words.length];
+
+        long start1 = System.nanoTime();
+
+        buildBottomUp(heap1);
+        heapSort(heap1);
+
+        long end1 = System.nanoTime();
+     // commit changes 
+     
+
     
