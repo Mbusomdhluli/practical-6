@@ -86,7 +86,25 @@ public class tryheapsort
             heapifyDown(heap, i, 0);
         }
     }
-// commmit changes  
+// commmit changes
   
+  public static String[] readWords(String filename) throws Exception {
+
+        ArrayList<String> list = new ArrayList<>();
+
+        BufferedReader br = new BufferedReader(new FileReader(filename));
+
+        String line;
+
+        while ((line = br.readLine()) != null) {
+
+            String[] words = line.split("\\W+");
+
+            for (String w : words) {
+                if (!w.equals(""))
+                    list.add(w.toLowerCase());
+            }
+        }
+    // commit changes 
   
     
